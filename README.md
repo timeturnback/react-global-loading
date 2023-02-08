@@ -2,23 +2,13 @@
 
 [npm_url]: https://www.npmjs.org/package/react-global-loading
 
-![N|Solid](/assets/example.png)
+![Example](/assets/example.png)
 
 [![npm version](https://badge.fury.io/js/react-spinners.svg)][npm_url]
 [![downloads](https://img.shields.io/npm/dt/react-spinners.svg)][npm_url]
 [![license](https://img.shields.io/npm/l/react-spinners.svg)][npm_url]
 
 React simple global loading package
-
-A collection of loading spinners with React.js based on [Halogen](https://github.com/yuanyan/halogen).
-
-This package is bootstraped using [react-npm-boilerplate](https://github.com/juliancwirko/react-npm-boilerplate)
-
-## Demo
-
-[Demo Page](https://www.davidhu.io/react-spinners)
-
-[Storybook](https://www.davidhu.io/react-spinners/storybook/)
 
 ## Installation
 
@@ -36,7 +26,7 @@ npm install --save react-global-loading
 
 ## Getting Started
 
-Add the GlobalLoading to your app first. It will take care of rendering global loading . Now you can trigger `globalLoading.show()` and `globalLoading.hide()` from anywhere!
+Add the GlobalLoading to your app first (should be at root component like index.js or app.js). It will take care of rendering global loading . Now you can trigger `globalLoading.show()` and `globalLoading.hide()` from anywhere!
 
 ```tsx
 import { GlobalLoading, showLoading } from 'react-hot-toast';
