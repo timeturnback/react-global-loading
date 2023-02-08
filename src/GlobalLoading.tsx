@@ -1,8 +1,8 @@
 import React, { CSSProperties, FC, ReactElement, useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
 
-type Listener = React.Dispatch<React.SetStateAction<boolean>> | null;
-export let showLoading: Listener = null;
+type Listener = React.Dispatch<React.SetStateAction<boolean>> | ((value: boolean) => void);
+export let showLoading: Listener = () => {};
 
 export const show = () => {
   if (showLoading) {
@@ -22,7 +22,7 @@ export const globalLoading = {
 };
 
 interface GlobalLoadingProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   WrapperComponent?: (props: any) => ReactElement;
   backgroundColor?: string;
   loadingSize?: number;
@@ -70,7 +70,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
   if (!loading) return null;
   if (WrapperComponent)
     return <WrapperComponent {...rest}>{children || _renderLoading()}</WrapperComponent>;
-  return <div style={$globalLoading}>{children || _renderLoading()}</div>;
+  return <div style={style}>{children || _renderLoading()}</div>;
 };
 
 const $globalLoading: CSSProperties = {
@@ -81,7 +81,6 @@ const $globalLoading: CSSProperties = {
   bottom: 0,
   width: '100vw',
   height: '100vh',
-  backgroundColor: 'rgba(0, 0, 0, 0.6)',
 
   display: 'flex',
   justifyContent: 'center',

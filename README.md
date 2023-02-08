@@ -1,9 +1,138 @@
-# React Component Library
+# React Global Loading
 
-![N|Solid](https://lh3.googleusercontent.com/a-/AOh14GglnMoBPixoeH-IwaCWx7SpehtvYTPowns21fVO=s200-k-no-rp-mo)
+[npm_url]: https://www.npmjs.org/package/react-global-loading
 
-Learn how to make a component library!  Link is in the repository description.
+![N|Solid](/assets/example.png)
 
-License
-----
-MIT
+[![npm version](https://badge.fury.io/js/react-spinners.svg)][npm_url]
+[![downloads](https://img.shields.io/npm/dt/react-spinners.svg)][npm_url]
+[![license](https://img.shields.io/npm/l/react-spinners.svg)][npm_url]
+
+React simple global loading package
+
+A collection of loading spinners with React.js based on [Halogen](https://github.com/yuanyan/halogen).
+
+This package is bootstraped using [react-npm-boilerplate](https://github.com/juliancwirko/react-npm-boilerplate)
+
+## Demo
+
+[Demo Page](https://www.davidhu.io/react-spinners)
+
+[Storybook](https://www.davidhu.io/react-spinners/storybook/)
+
+## Installation
+
+With Yarn:
+
+```bash
+yarn add react-global-loading
+```
+
+With npm:
+
+```bash
+npm install --save react-global-loading
+```
+
+## Getting Started
+
+Add the GlobalLoading to your app first. It will take care of rendering global loading . Now you can trigger `globalLoading.show()` and `globalLoading.hide()` from anywhere!
+
+```tsx
+import { GlobalLoading, showLoading } from 'react-hot-toast';
+
+const App = () => {
+  const show = () => {
+    showLoading(true);
+    setTimeout(() => {
+      showLoading(false);
+    }, 1000);
+  };
+
+  return (
+    <div>
+      <button onClick={show}>Show Loading</button>
+      <GlobalLoading />
+    </div>
+  );
+};
+```
+
+## Other way to trigger loading
+
+```tsx
+import { showLoading } from 'react-hot-toast';
+showLoading(true); // show
+showLoading(false); // hide
+
+import { show, hide } from 'react-hot-toast';
+show(); // show
+hide(); // hide
+
+import { globalLoading } from 'react-hot-toast';
+globalLoading.show(); // show
+globalLoading.hide(); // hide
+```
+
+<details><summary>Example using React Class</summary>
+
+</details>
+
+## Available Loaders, PropTypes, and Default Values
+
+Default props:
+
+```
+  children: React.ReactNode;
+  WrapperComponent?: (props: any) => ReactElement;
+  backgroundColor?: string;
+  loadingSize?: number;
+  loadingColor?: string;
+  loadingType?:
+    | 'spin'
+    | 'bars'
+    | 'bubbles'
+    | 'cubes'
+    | 'cylon'
+    | 'spin'
+    | 'spinningBubbles'
+    | 'spokes';
+```
+
+### `children` prop
+
+`children` will replace default loading icon
+
+```tsx
+<GlobalLoading>
+  <ReactLoading /> // OR your custom loading component
+<GlobalLoading/>
+```
+
+### `WrapperComponent` prop
+
+The wrapper component ( background screen )
+
+```tsx
+<GlobalLoading WrapperComponent={() => <div style={style} />} />;
+
+// suggested style
+style = {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  width: '100vw',
+  height: '100vh',
+  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+};
+```
+
+### `backgroundColor`, `loadingSize`, `loadingColor`, and `loadingType` props
+
+Style of the default loading component
