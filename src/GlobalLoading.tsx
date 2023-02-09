@@ -84,5 +84,7 @@ const $globalLoading: CSSProperties = {
 
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+
+  zIndex: 99
 };
