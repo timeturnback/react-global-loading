@@ -87,7 +87,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
             width: loadingSize,
             height: loadingSize,
             borderRadius: '50%',
-            border: `${loadingThickness}px solid rgba(255, 255, 255, 0.4)`,
+            border: `${loadingThickness}px solid rgba(255, 255, 255, 0.5)`,
             position: 'absolute',
             top: 0
           }}
@@ -102,7 +102,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
     backgroundColor
   };
 
-  // if (!loading) return null;
+  if (!loading) return null;
   if (WrapperComponent)
     return <WrapperComponent {...rest}>{children || _renderLoading()}</WrapperComponent>;
   return <div style={style}>{children || _renderLoading()}</div>;
