@@ -25,6 +25,7 @@ interface GlobalLoadingProps {
   children?: React.ReactNode;
   WrapperComponent?: (props: any) => ReactElement;
   backgroundColor?: string;
+  zIndex?: number;
   loadingSize?: number;
   loadingColor?: string;
   loadingType?:
@@ -45,6 +46,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
     loadingColor = '#eee',
     loadingType = 'spin',
     backgroundColor = 'rgba(0, 0, 0, 0.6)',
+    zIndex = 999,
     ...rest
   } = props || {};
   const [loading, setLoading] = useState(false);
@@ -64,6 +66,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
 
   const style = {
     ...$globalLoading,
+    zIndex,
     backgroundColor
   };
 
@@ -84,7 +87,5 @@ const $globalLoading: CSSProperties = {
 
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
-
-  zIndex: 999
+  alignItems: 'center'
 };
