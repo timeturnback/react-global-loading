@@ -12,7 +12,7 @@ export const show = () => {
 
 export const hide = () => {
   if (showLoading) {
-    showLoading(true);
+    showLoading(false);
   }
 };
 
@@ -86,5 +86,5 @@ const $globalLoading: CSSProperties = {
   justifyContent: 'center',
   alignItems: 'center',
 
-  zIndex: 99
+  zIndex: 999
 };
