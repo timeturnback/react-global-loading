@@ -1,6 +1,6 @@
 {
   "name": "react-global-loading",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Global loading screen for React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,7 +37,6 @@
     "parcel": "^2.6.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-loading": "^2.0.3",
     "tsup": "^6.5.0",
     "typescript": "^4.5.2"
   },

@@ -123,6 +123,6 @@ style = {
 };
 ```
 
-### `zIndex`, `backgroundColor`, `loadingSize`, `loadingColor`, and `loadingType` props
+### `zIndex`, `backgroundColor`, `loadingSize`, `loadingThickness`, `loadingSpeed`, `loadingColor`, and `loadingType` props
 
 Style of the default loading component

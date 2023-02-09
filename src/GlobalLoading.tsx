@@ -1,5 +1,4 @@
 import React, { CSSProperties, FC, ReactElement, useEffect, useState } from 'react';
-import ReactLoading from 'react-loading';
 
 type Listener = React.Dispatch<React.SetStateAction<boolean>> | ((value: boolean) => void);
 export let showLoading: Listener = () => {};
@@ -28,6 +27,8 @@ interface GlobalLoadingProps {
   zIndex?: number;
   loadingSize?: number;
   loadingColor?: string;
+  loadingThickness?: number;
+  loadingSpeed?: number;
   loadingType?:
     | 'spin'
     | 'bars'
@@ -42,9 +43,11 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
   const {
     children,
     WrapperComponent,
-    loadingSize = 50,
+    loadingSize = 70,
     loadingColor = '#eee',
     loadingType = 'spin',
+    loadingSpeed = 1,
+    loadingThickness = 7,
     backgroundColor = 'rgba(0, 0, 0, 0.6)',
     zIndex = 999,
     ...rest
@@ -55,13 +58,26 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
     showLoading = setLoading;
   }, []);
 
+  // loading indicator
   const _renderLoading = () => (
-    <ReactLoading
-      type={loadingType}
-      color={loadingColor}
-      height={loadingSize}
-      width={loadingSize}
-    />
+    <>
+      <style>{`
+            @keyframes spin {
+                 0% { transform: rotate(0deg); }
+                 100% { transform: rotate(360deg); }
+            }
+        `}</style>
+      <div
+        style={{
+          width: loadingSize,
+          height: loadingSize,
+          borderRadius: '50%',
+          border: `${loadingThickness}px solid ${loadingColor}`,
+          borderTopColor: 'transparent',
+          animation: `spin ${loadingSpeed}s linear infinite`
+        }}
+      />
+    </>
   );
 
   const style = {
