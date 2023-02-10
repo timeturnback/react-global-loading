@@ -1,12 +1,12 @@
 # React Global Loading
 
-[npm_url]: https://www.npmjs.org/package/react-global-loading
-
 ![Example](/assets/example.png)
 
-[![npm version](https://badge.fury.io/js/react-spinners.svg)][npm_url]
-[![downloads](https://img.shields.io/npm/dt/react-spinners.svg)][npm_url]
-[![license](https://img.shields.io/npm/l/react-spinners.svg)][npm_url]
+[![npm version](https://badge.fury.io/js/react-global-loading.svg)][npm_url]
+[![downloads](https://img.shields.io/npm/dt/react-global-loading.svg)][npm_url]
+[![license](https://img.shields.io/npm/l/react-global-loading.svg)][npm_url]
+
+[npm_url]: https://www.npmjs.org/package/react-global-loading
 
 React simple global loading package
 
