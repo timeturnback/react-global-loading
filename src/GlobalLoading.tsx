@@ -29,15 +29,6 @@ interface GlobalLoadingProps {
   loadingColor?: string;
   loadingThickness?: number;
   loadingSpeed?: number;
-  loadingType?:
-    | 'spin'
-    | 'bars'
-    | 'bubbles'
-    | 'cubes'
-    | 'cylon'
-    | 'spin'
-    | 'spinningBubbles'
-    | 'spokes';
 }
 export const GlobalLoading: FC<GlobalLoadingProps> = props => {
   const {
@@ -45,7 +36,6 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
     WrapperComponent,
     loadingSize = 70,
     loadingColor = '#eee',
-    loadingType = 'spin',
     loadingSpeed = 1,
     loadingThickness = 7,
     backgroundColor = 'rgba(0, 0, 0, 0.6)',

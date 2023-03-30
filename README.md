@@ -29,7 +29,7 @@ npm install --save react-global-loading
 Add the GlobalLoading to your app first (should be at root component like index.js or app.js). It will take care of rendering global loading . Now you can trigger `globalLoading.show()` and `globalLoading.hide()` from anywhere!
 
 ```tsx
-import { GlobalLoading, showLoading } from 'react-hot-toast';
+import { GlobalLoading, showLoading } from 'react-global-loading';
 
 const App = () => {
   const show = () => {
@@ -51,15 +51,15 @@ const App = () => {
 ## Other way to trigger loading
 
 ```tsx
-import { showLoading } from 'react-hot-toast';
+import { showLoading } from 'react-global-loading';
 showLoading(true); // show
 showLoading(false); // hide
 
-import { show, hide } from 'react-hot-toast';
+import { show, hide } from 'react-global-loading';
 show(); // show
 hide(); // hide
 
-import { globalLoading } from 'react-hot-toast';
+import { globalLoading } from 'react-global-loading';
 globalLoading.show(); // show
 globalLoading.hide(); // hide
 ```
