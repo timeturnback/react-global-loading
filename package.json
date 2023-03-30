@@ -18,7 +18,9 @@
   ],
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "prepack": "yarn build",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,7 @@
     "parcel": "^2.6.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "release-it": "^15.9.3",
     "tsup": "^6.5.0",
     "typescript": "^4.5.2"
   },
@@ -47,5 +50,21 @@
   "bugs": {
     "url": "https://github.com/timeturnback/react-global-loading/issues"
   },
-  "homepage": "https://github.com/timeturnback/react-global-loading#readme"
+  "homepage": "https://github.com/timeturnback/react-global-loading#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": false
+    }
+  }
 }
