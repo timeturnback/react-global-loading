@@ -69,17 +69,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
             height: loadingSize,
             borderRadius: '50%',
             border: `${loadingThickness}px solid`,
-            borderTopColor: `${loadingColor}`
-          }}
-        />
-        <div
-          style={{
-            width: loadingSize,
-            height: loadingSize,
-            borderRadius: '50%',
-            border: `${loadingThickness}px solid rgba(255, 255, 255, 0.5)`,
-            position: 'absolute',
-            top: 0
+            borderColor: `${loadingColor} ${backgroundColor} ${backgroundColor} ${backgroundColor}`
           }}
         />
       </div>
