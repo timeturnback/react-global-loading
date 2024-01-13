@@ -27,6 +27,7 @@ interface GlobalLoadingProps {
   zIndex?: number;
   loadingSize?: number;
   loadingColor?: string;
+  loadingBackgroundColor?: string;
   loadingThickness?: number;
   loadingSpeed?: number;
 }
@@ -36,6 +37,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
     WrapperComponent,
     loadingSize = 70,
     loadingColor = '#eee',
+    loadingBackgroundColor = '#000',
     loadingSpeed = 1,
     loadingThickness = 7,
     backgroundColor = 'rgba(0, 0, 0, 0.6)',
@@ -69,7 +71,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
             height: loadingSize,
             borderRadius: '50%',
             border: `${loadingThickness}px solid`,
-            borderColor: `${loadingColor} ${backgroundColor} ${backgroundColor} ${backgroundColor}`
+            borderColor: `${loadingColor} ${loadingBackgroundColor} ${loadingBackgroundColor} ${loadingBackgroundColor}`
           }}
         />
       </div>
