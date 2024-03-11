@@ -72,7 +72,6 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
             width: loadingSize,
             height: loadingSize,
             borderRadius: '50%',
-            backdropFilter: `blur(${blur}px)`,
             border: `${loadingThickness}px solid`,
             borderColor: `${loadingColor} ${loadingBackgroundColor} ${loadingBackgroundColor} ${loadingBackgroundColor}`
           }}
@@ -84,7 +83,8 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
   const style = {
     ...$globalLoading,
     zIndex,
-    backgroundColor
+    backgroundColor,
+    backdropFilter: `blur(${blur}px)`
   };
 
   if (!loading) return null;
