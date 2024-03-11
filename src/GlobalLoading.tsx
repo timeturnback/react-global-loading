@@ -30,6 +30,7 @@ interface GlobalLoadingProps {
   loadingBackgroundColor?: string;
   loadingThickness?: number;
   loadingSpeed?: number;
+  blur?: number;
 }
 export const GlobalLoading: FC<GlobalLoadingProps> = props => {
   const {
@@ -42,6 +43,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
     loadingThickness = 7,
     backgroundColor = 'rgba(0, 0, 0, 0.6)',
     zIndex = 999,
+    blur = 0,
     ...rest
   } = props || {};
   const [loading, setLoading] = useState(false);
@@ -70,6 +72,7 @@ export const GlobalLoading: FC<GlobalLoadingProps> = props => {
             width: loadingSize,
             height: loadingSize,
             borderRadius: '50%',
+            backdropFilter: `blur(${blur}px)`,
             border: `${loadingThickness}px solid`,
             borderColor: `${loadingColor} ${loadingBackgroundColor} ${loadingBackgroundColor} ${loadingBackgroundColor}`
           }}
