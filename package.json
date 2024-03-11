@@ -1,6 +1,6 @@
 {
   "name": "react-global-loading",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "Global loading screen for React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
